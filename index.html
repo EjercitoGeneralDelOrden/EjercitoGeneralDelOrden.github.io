@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejército General del Orden (EGO)</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="logo (2).png"> <!-- Esta línea agrega el favicon -->
+    <style>
+        /* Estilos CSS adicionales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            display: flex; /* Alinear elementos horizontalmente */
+            justify-content: space-between; /* Espacio entre los elementos */
+            align-items: center; /* Alinear verticalmente al centro */
+        }
+        header .logo-container {
+            display: flex; /* Alinear elementos horizontalmente */
+            align-items: center; /* Alinear verticalmente al centro */
+        }
+        header .logo-container img {
+            width: 100px; /* Tamaño del logo ajustable */
+            margin-right: 10px; /* Espacio entre el logo y el texto */
+        }
+        header .logo-container h1 {
+            margin: 0; /* Eliminar margen predeterminado */
+            font-size: 24px; /* Tamaño del texto ajustable */
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li:last-child {
+            margin-right: 0; /* Eliminar margen del último elemento */
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            line-height: 1.6;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .redes-sociales img {
+            width: 30px; /* Tamaño de los iconos de redes sociales ajustable */
+            margin-right: 10px;
+        }
+        .derechos-reservados {
+            margin: 0;
+        }
+
+        /* Estilos para el carrusel */
+        .carrusel {
+            display: flex;
+            overflow: hidden;
+            width: 80%; /* Ajusta el ancho del carrusel según sea necesario */
+            margin: 20px auto; /* Centrar el carrusel horizontalmente */
+        }
+        .carrusel img {
+            width: 50%;
+            transition: transform 0.5s ease; /* Efecto de transición suave */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo de EGO">
+            <h1>Ejercito General del Orden</h1>
+        </div>
+        <nav>
+            <ul>
+                <li>        <a href="#inicio">Inicio</a></li>
+                <li><a href="#acerca-de">Acerca de</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="https://discord.com/invite/7GPZcbEE8G">Unete</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="acerca-de">
+            <h2>Acerca de EGO</h2>
+            <p>¡Bienvenido a la página web del Ejército General del Orden!
+            Somos una facción militar que se enfoca en la capacitación y especialización de nuestros miembros en diversas áreas, como el comportamiento, el desarrollo del campo y el alcance, así como en otros puntos específicos que se aplican uniformemente a lo largo de su servicio.</p>
+        </section>
+
+        <section id="bienvenida">
+            <h2>Bienvenidos a EGO</h2>
+            <p>En esta página te daremos una breve introducción para poder ingresar al Ejército General del Orden.</p>
+            <p>Si aún no tienes una cuenta de Discord, puedes crear una <a href="https://discord.com/register" target="_blank">aquí</a>.</p>
+            <p>Cuando tengas una cuenta de Discord, deberás entrar al servidor siguiendo el enlace que se encuentra en la esquina superior izquierda, el que dice "Únete". Allí encontrarás las instrucciones que necesitas para unirte a nuestra gran facción del Ejército General del Orden.</p>
+            
+            <!-- Carrusel de imágenes -->
+            <div class="carrusel">
+                <img src="Act 1.png" alt="Imagen 1">
+                <img src="Act 2.png" alt="Imagen 2">
+                <img src="Act 3.png" alt="Imagen 3">
+                <img src="Act 4.png" alt="Imagen 4">
+                <img src="Act 5.png" alt="Imagen 5">
+                <!-- Agrega más imágenes según sea necesario -->
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="redes-sociales">
+            <a href="https://www.instagram.com/ego_faccion/"><img src="instagram.png" alt="Instagram"></a>
+            <a href="https://twitter.com/la_ejercit5685"><img src="x.png" alt="Twitter"></a>
+            <a href="https://www.youtube.com/channel/UCLGlN-UphafvBkwcDJiR99Q"><img src="youtube.png" alt="YouTube"></a>
+            <a href="https://www.tiktok.com/@ego_faccion?lang=es"><img src="tik-tok.png" alt="TikTok"></a>
+        </div>
+        <p class="derechos-reservados">Derechos reservados &copy; 2024 Ejército General del Orden</p>
+        <div></div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let index = 0;
+            const imagenes = document.querySelectorAll('.carrusel img');
+        
+            function cambiarImagen() {
+                index = (index + 1) % imagenes.length;
+                const translateX = -index * 100 + '%';
+                imagenes.forEach(img => img.style.transform = `translateX(${translateX})`);
+                setTimeout(cambiarImagen, 5000); // Cambiar cada 5 segundos (5000 milisegundos)
+            }
+        
+            cambiarImagen();
+        });
+    </script>
+</body>
+</html>
