@@ -1,14 +1,14 @@
 /* Estilos generales */
 body {
-    font-family: 'Merriweather', serif !important;
+    font-family: 'Merriweather', serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5; /* Fondo más cálido */
-    color: #333; /* Texto más oscuro para mejor contraste */
+    background-color: #f5f5f5;
+    color: #333;
 }
 
 header {
-    background-color: #693e75; /* Color de fondo más cálido para el encabezado */
+    background-color: #4a5e8a;
     color: #fff;
     padding: 20px;
     display: flex;
@@ -16,8 +16,54 @@ header {
     align-items: center;
 }
 
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.logo-container img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 30px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
 nav ul li a {
-    color: #fff; /* Texto enlace en el encabezado */
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffc107;
+}
+
+nav ul li a.active {
+    color: #ffc107;
 }
 
 main {
@@ -26,18 +72,18 @@ main {
 
 section {
     margin-bottom: 30px;
-    background-color: #fff; /* Fondo blanco en secciones */
+    background-color: #fff;
     padding: 20px;
-    border-radius: 10px; /* Bordes redondeados para suavizar */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para resaltar las secciones */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 section h2 {
-    color: #693e75; /* Color de título más cálido */
+    color: #4a5e8a;
 }
 
 footer {
-    background-color: #693e75; /* Color de fondo más cálido para el pie de página */
+    background-color: #4a5e8a;
     color: #fff;
     text-align: center;
     padding: 10px;
@@ -45,24 +91,27 @@ footer {
 
 .derechos-reservados {
     margin: 0;
-    flex-grow: 1; /* Esto permite que el elemento ocupe todo el espacio disponible */
+    flex-grow: 1;
+}
+
+/* Estilos para el carrusel */
+.carrusel {
+    display: flex;
+    overflow: hidden;
+    margin: 20px auto;
 }
 
 .imagen-container {
-    margin-right: 200px; /* Espacio entre las imágenes */
-    border-radius: 10px; /* Bordes redondeados */
+    margin-right: 20px;
+    border-radius: 10px;
 }
 
 .imagen-container img {
-    width: 600px; /* Ancho de la imagen */
-    height: 400px; /* Alto de la imagen */
-    display: block; /* Para que las imágenes no se muestren en línea */
-    margin: 0 auto; /* Para centrar las imágenes horizontalmente */
-    border-radius: 10px; /* Bordes redondeados */
-    transition: transform 0.5s ease; /* Transición suave entre imágenes */
+    width: 600px;
+    height: 400px;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
 }
-
-
 
 /* Estilos para la sección de redes sociales */
 #redes-sociales {
@@ -79,19 +128,18 @@ footer {
 .social-icons a {
     margin: 0 15px;
     text-decoration: none;
-    color: #333; /* Color de los iconos */
+    color: #333;
     transition: transform 0.3s ease;
-    display: inline-block; /* Para evitar que se muestren en línea */
+    display: inline-block;
 }
 
 .social-icons a span {
     display: block;
     margin-top: 5px;
-    font-family: 'Merriweather', serif; /* Aplicar la fuente de Merriweather */
-    color: #333; /* Color de los nombres de las redes sociales */
-    font-weight: bold; /* Opcional: para hacer los nombres de las redes sociales más destacados */
+    font-family: 'Merriweather', serif;
+    color: #333;
+    font-weight: bold;
 }
-
 
 .social-icons a:hover {
     transform: translateY(-5px);
@@ -104,4 +152,34 @@ footer {
 .social-icons a span {
     display: block;
     margin-top: 5px;
+}
+
+/* Estilos para el collapsible */
+.collapsible {
+    cursor: pointer;
+}
+
+.collapsible h2 {
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.collapsible .historia-texto {
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+.collapsible .historia-texto p {
+    margin: 10px 0;
+}
+
+.expand-icon {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.collapsible.expanded .expand-icon {
+    transform: rotate(90deg);
 }
