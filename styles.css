@@ -1,12 +1,14 @@
 /* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Merriweather', serif !important;
     margin: 0;
     padding: 0;
+    background-color: #f5f5f5; /* Fondo más cálido */
+    color: #333; /* Texto más oscuro para mejor contraste */
 }
 
 header {
-    background-color: #333;
+    background-color: #693e75; /* Color de fondo más cálido para el encabezado */
     color: #fff;
     padding: 20px;
     display: flex;
@@ -14,24 +16,8 @@ header {
     align-items: center;
 }
 
-.logo-container img {
-    width: 100px; /* Ajusta el tamaño según el tamaño de tu logo */
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-left: 20px;
-}
-
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
+    color: #fff; /* Texto enlace en el encabezado */
 }
 
 main {
@@ -40,38 +26,82 @@ main {
 
 section {
     margin-bottom: 30px;
+    background-color: #fff; /* Fondo blanco en secciones */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados para suavizar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para resaltar las secciones */
+}
+
+section h2 {
+    color: #693e75; /* Color de título más cálido */
 }
 
 footer {
-    background-color: #333;
+    background-color: #693e75; /* Color de fondo más cálido para el pie de página */
     color: #fff;
     text-align: center;
     padding: 10px;
 }
 
-/* Estilos específicos para las secciones */
-section h2 {
-    color: #333;
+.derechos-reservados {
+    margin: 0;
+    flex-grow: 1; /* Esto permite que el elemento ocupe todo el espacio disponible */
 }
 
-/* Estilos para el formulario de contacto (puedes personalizarlos según tus necesidades) */
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+.imagen-container {
+    margin-right: 200px; /* Espacio entre las imágenes */
+    border-radius: 10px; /* Bordes redondeados */
 }
 
-input[type="submit"] {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+.imagen-container img {
+    width: 600px; /* Ancho de la imagen */
+    height: 400px; /* Alto de la imagen */
+    display: block; /* Para que las imágenes no se muestren en línea */
+    margin: 0 auto; /* Para centrar las imágenes horizontalmente */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: transform 0.5s ease; /* Transición suave entre imágenes */
 }
 
-input[type="submit"]:hover {
-    background-color: #555;
+
+
+/* Estilos para la sección de redes sociales */
+#redes-sociales {
+    text-align: center;
+    margin-top: 20px;
 }
 
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icons a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333; /* Color de los iconos */
+    transition: transform 0.3s ease;
+    display: inline-block; /* Para evitar que se muestren en línea */
+}
+
+.social-icons a span {
+    display: block;
+    margin-top: 5px;
+    font-family: 'Merriweather', serif; /* Aplicar la fuente de Merriweather */
+    color: #333; /* Color de los nombres de las redes sociales */
+    font-weight: bold; /* Opcional: para hacer los nombres de las redes sociales más destacados */
+}
+
+
+.social-icons a:hover {
+    transform: translateY(-5px);
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2);
+}
+
+.social-icons a span {
+    display: block;
+    margin-top: 5px;
+}

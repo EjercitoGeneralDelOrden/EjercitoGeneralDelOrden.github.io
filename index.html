@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejército General del Orden (EGO)</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="logo (2).png"> <!-- Esta línea agrega el favicon -->
+    <link rel="icon" type="image/png" href="./media/header/logo.png"> <!-- Esta línea agrega el favicon -->
+    <!-- Agregar la fuente de Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap">
     <style>
         /* Estilos CSS adicionales */
         body {
@@ -99,15 +101,15 @@
 <body>
     <header>
         <div class="logo-container">
-            <img src="logo.png" alt="Logo de EGO">
-            <h1>Ejercito General del Orden</h1>
+            <img src="./media/header/logo.png" alt="Logo de EGO">
+            <h1>Ejército General del Orden</h1>
         </div>
         <nav>
             <ul>
-                <li>        <a href="#inicio">Inicio</a></li>
+                <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#acerca-de">Acerca de</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-                <li><a href="https://discord.com/invite/7GPZcbEE8G">Unete</a></li>
+                <li><a href="https://www.instagram.com/ego_faccion/">Contacto</a></li>
+                <li><a href="https://discord.com/invite/7GPZcbEE8G">Únete</a></li>
             </ul>
         </nav>
     </header>
@@ -127,41 +129,88 @@
             
             <!-- Carrusel de imágenes -->
             <div class="carrusel">
-                <img src="Act 1.png" alt="Imagen 1">
-                <img src="Act 2.png" alt="Imagen 2">
-                <img src="Act 3.png" alt="Imagen 3">
-                <img src="Act 4.png" alt="Imagen 4">
-                <img src="Act 5.png" alt="Imagen 5">
-                <!-- Agrega más imágenes según sea necesario -->
+                <div class="imagen-container" style="margin-right: 200px;">
+                    <img src="./media/sections/Act 1.png" alt="Imagen 1" style="width: 600px; height: 400px;">
+                </div>
+                <div class="imagen-container" style="margin-right: 200px;">
+                    <img src="./media/sections/Act 2.png" alt="Imagen 2" style="width: 600px; height: 400px;">
+                </div>
+                <div class="imagen-container" style="margin-right: 200px;">
+                    <img src="./media/sections/Act 3.png" alt="Imagen 3" style="width: 600px; height: 400px;">
+                </div>
+                <div class="imagen-container" style="margin-right: 200px;">
+                    <img src="./media/sections/Act 4.png" alt="Imagen 4" style="width: 600px; height: 400px;">
+                </div>
+                <div class="imagen-container">
+                    <img src="./media/sections/Act 5.png" alt="Imagen 5" style="width: 600px; height: 400px;">
+                </div>
+            </div>
+            
+            
+        </section>
+        <section id="redes-sociales">
+            <h2>Redes sociales</h2>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/ego_faccion/">
+                    <img src="./media/footer/instagram.png" alt="Instagram">
+                    <span>Instagram</span>
+                </a>
+                <a href="https://twitter.com/la_ejercit5685">
+                    <img src="./media/footer/X.png" alt="Twitter">
+                    <span>Twitter</span>
+                </a>
+                <a href="https://www.youtube.com/channel/UCLGlN-UphafvBkwcDJiR99Q">
+                    <img src="./media/footer/youtube.png" alt="YouTube">
+                    <span>YouTube</span>
+                </a>
+                <a href="https://www.tiktok.com/@ego_faccion?lang=es">
+                    <img src="./media/footer/tik-tok.png" alt="TikTok">
+                    <span>TikTok</span>
+                </a>
             </div>
         </section>
+        
+             
     </main>
     
     <footer>
-        <div class="redes-sociales">
-            <a href="https://www.instagram.com/ego_faccion/"><img src="instagram.png" alt="Instagram"></a>
-            <a href="https://twitter.com/la_ejercit5685"><img src="x.png" alt="Twitter"></a>
-            <a href="https://www.youtube.com/channel/UCLGlN-UphafvBkwcDJiR99Q"><img src="youtube.png" alt="YouTube"></a>
-            <a href="https://www.tiktok.com/@ego_faccion?lang=es"><img src="tik-tok.png" alt="TikTok"></a>
-        </div>
-        <p class="derechos-reservados">Derechos reservados &copy; 2024 Ejército General del Orden</p>
-        <div></div>
+        <p class="derechos-reservados">&copy; Ejército General del Orden. Todos los derechos reservados</p>
     </footer>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             let index = 0;
             const imagenes = document.querySelectorAll('.carrusel img');
-        
+            const imagenWidth = imagenes[0].offsetWidth + 200; // Ancho de la imagen más el margen
+            const totalImagenes = imagenes.length;
+
+            // Establecer la posición inicial de las imágenes
+            imagenes.forEach((img, i) => {
+                img.style.transform = `translateX(${i * imagenWidth}px)`;
+            });
+
             function cambiarImagen() {
-                index = (index + 1) % imagenes.length;
-                const translateX = -index * 100 + '%';
+                index = (index + 1) % totalImagenes;
+                const translateX = -index * imagenWidth + 'px'; // Usar el ancho total de la imagen
+                imagenes.forEach(img => img.style.transition = 'transform 0.5s ease-in-out'); // Transición suave
                 imagenes.forEach(img => img.style.transform = `translateX(${translateX})`);
+
                 setTimeout(cambiarImagen, 5000); // Cambiar cada 5 segundos (5000 milisegundos)
             }
-        
+
             cambiarImagen();
+
+            // Para manejar el tamaño de la ventana y mantener la respuesta
+            window.addEventListener('resize', function() {
+                imagenWidth = imagenes[0].offsetWidth + 200;
+                const translateX = -index * imagenWidth + 'px';
+                imagenes.forEach(img => img.style.transform = `translateX(${translateX})`);
+            });
         });
+
+
+
+
     </script>
 </body>
 </html>
