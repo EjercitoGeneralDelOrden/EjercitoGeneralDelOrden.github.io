@@ -164,19 +164,42 @@ footer {
     }
 
     .logo-container h1 {
-        font-size: 24px;
+        font-size: 20px;
+    }
+
+    .logo-container img {
+        width: 30px;
+        margin-right: 5px;
+    }
+
+    nav ul {
+        display: flex;
+        align-items: center;
     }
 
     nav ul li {
-        margin-right: 15px;
+        margin-right: 5px;
     }
 
-    .imagen-container img {
+    nav ul li a {
+        font-size: 12px;
+    }
+
+    .carrusel-inner {
+        height: auto;
+    }
+
+    .carrusel-inner img {
         width: 100%;
         height: auto;
     }
 
     .social-icons a {
-        margin: 0 10px;
+        margin: 0 5px;
+    }
+
+    .social-icons a span {
+        font-size: 10px;
     }
 }
+
