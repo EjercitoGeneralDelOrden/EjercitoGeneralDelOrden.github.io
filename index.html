@@ -68,18 +68,31 @@
             <p>Es crucial destacar que el <b>Ejército General del Orden</b> se distingue por su independencia de Castellammare. A pesar de que sus raíces se encuentran en ese conflicto, la facción ha trazado su propio camino y se ha consolidado como una fuerza autónoma y distinta. Esta separación de sus orígenes constituye un aspecto fundamental de su identidad.</p>
             <p>La fecha oficial de fundación, el <b>16 de febrero de 2023</b>, marca el inicio formal de esta nueva entidad. Desde entonces, el <b>Ejército General del Orden</b> ha continuado evolucionando, consolidando su posición y dejando una huella única en la comunidad.</p>
         </section>
-        
-        <!-- Botón para cargar comentarios -->
         <section id="comentarios">
             <h2>Comentarios</h2>
-            <div class="comentarios-btn-container">
-                <button class="disqus-btn" id="load-comments-btn">Cargar Comentarios</button>
-            </div>
-                    <!-- Contenedor para los comentarios de Disqus -->
-            <div id="disqus-comments" style="display: none;"></div>
+                <!-- Código para mostrar el número de comentarios -->
+                <script id="dsq-count-scr" src="//egodisqus.disqus.com/count.js" async></script>
+
+                <!-- Código de Disqus para los comentarios -->
+                <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://egodisqus.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Habilita javascript para ver los <a href="https://disqus.com/?ref_noscript">comentarios impulsados por Disqus.</a></noscript>
         </section>
-
-
         <section id="redes-sociales">
             <h2>Redes sociales</h2>
             <div class="social-icons">
@@ -108,36 +121,46 @@
         <p class="derechos-reservados">&copy; Ejército General del Orden. Todos los derechos reservados</p>
     </footer>
 
+
     <!-- Código para mostrar el número de comentarios -->
     <script id="dsq-count-scr" src="//egodisqus.disqus.com/count.js" async></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Botón para cargar comentarios
-            const loadCommentsBtn = document.getElementById('load-comments-btn');
+            let index = 0;
+            const imagenes = document.querySelectorAll('.carrusel img');
+            const imagenWidth = imagenes[0].offsetWidth + 200; // Ancho de la imagen más el margen
+            const totalImagenes = imagenes.length;
 
-            // Función para cargar los comentarios al hacer clic en el botón
-            function loadComments() {
-                const disqusThread = document.getElementById('disqus_thread');
-                if (disqusThread) {
-                    // Cargar Disqus si el contenedor existe
-                    const d = document, s = d.createElement('script');
-                    s.src = 'https://egodisqus.disqus.com/embed.js';
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
+            // Establecer la posición inicial de las imágenes
+            imagenes.forEach((img, i) => {
+                img.style.transform = `translateX(${i * imagenWidth}px)`;
+            });
 
-                    // Desvincular el botón de cargar comentarios después de cargar Disqus
-                    loadCommentsBtn.removeEventListener('click', loadComments);
-                    loadCommentsBtn.style.display = 'none'; // Ocultar el botón después de cargar los comentarios
-                }
+            function cambiarImagen() {
+                index = (index + 1) % totalImagenes;
+                const translateX = -index * imagenWidth + 'px'; // Usar el ancho total de la imagen
+                imagenes.forEach(img => img.style.transition = 'transform 0.5s ease-in-out'); // Transición suave
+                imagenes.forEach(img => img.style.transform = `translateX(${translateX})`);
+
+                setTimeout(() => {
+                    if (index === 0) {
+                        imagenes.forEach(img => img.style.transition = 'none'); // Eliminar transición para el cambio instantáneo
+                        imagenes.forEach(img => img.style.transform = `translateX(${index * imagenWidth}px)`); // Mostrar la primera imagen
+                    }
+                }, 500); // Retraso de medio segundo antes de reiniciar el bucle
+
+                setTimeout(cambiarImagen, 5000); // Cambiar cada 5 segundos (5000 milisegundos)
             }
 
-            // Agregar evento de clic al botón para cargar comentarios
-            if (loadCommentsBtn) {
-                loadCommentsBtn.addEventListener('click', loadComments);
-            }
+            cambiarImagen();
+
+            // Para manejar el tamaño de la ventana y mantener la respuesta
+            window.addEventListener('resize', function() {
+                const translateX = -index * imagenWidth + 'px';
+                imagenes.forEach(img => img.style.transform = `translateX(${translateX})`);
+            });
         });
-
     </script>
 </body>
 </html>
