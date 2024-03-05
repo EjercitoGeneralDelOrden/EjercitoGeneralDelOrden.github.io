@@ -29,9 +29,9 @@
     
     <main>
         <section id="introduccion">
-            <h2>Introduccion</h2>
+            <h2>Introducción</h2>
             <p>¡Bienvenido a la página web del Ejército General del Orden!
-            Somos una facción militar que se enfoca en la capacitación y especialización de nuestros miembros en diversas áreas, como el comportamiento, el desarrollo del campo y el alcance, así como en otros puntos específicos que se aplican uniformemente a lo largo de su servicio.</p>
+                Somos una facción militar que se enfoca en la capacitación y especialización de nuestros miembros en diversas áreas, como el comportamiento, el desarrollo del campo y el alcance, así como en otros puntos específicos que se aplican uniformemente a lo largo de su servicio.</p>
         </section>
 
         <section id="informacion">
@@ -59,20 +59,27 @@
                     <img src="./media/sections/Act 5.png" alt="Imagen 5" style="width: 600px; height: 400px;">
                 </div>
             </div>
-            
-            
         </section>
         
-        <!-- Sección de historia colapsable -->
-        <section id="historia" class="collapsible">
-            <h2>Historia <span class="expand-icon">»</span></h2>
-            <div class="historia-texto">
-                <p>El nacimiento del <b>Ejército General del Orden</b> se remonta a un evento trascendental: el raid ejecutado en la facción de Castellammare. Este raid no solo implicó el juicio y la expulsión del líder de la facción, sino que también desencadenó una serie de cambios significativos. En medio de este tumulto, <i>Alessandro570</i>, quien ocupaba el segundo puesto en la jerarquía de Castellammare, cedió su puesto a <i>edu1504</i>, emergiendo así como una figura clave. Al asumir el liderazgo, <i>edu1504</i>, junto a <i>BrinnesAt</i>, <i>d0uh___joako</i> y <i>pinaaa</i>, no solo tomaron las riendas de la facción, sino que también la transformaron radicalmente, moldeándola hasta convertirla en la entidad que conocemos en la actualidad.</p>
-                <p>Es crucial destacar que el <b>Ejército General del Orden</b> se distingue por su independencia de Castellammare. A pesar de que sus raíces se encuentran en ese conflicto, la facción ha trazado su propio camino y se ha consolidado como una fuerza autónoma y distinta. Esta separación de sus orígenes constituye un aspecto fundamental de su identidad.</p>
-                <p>La fecha oficial de fundación, el <b>16 de febrero de 2023</b>, marca el inicio formal de esta nueva entidad. Desde entonces, el <b>Ejército General del Orden</b> ha continuado evolucionando, consolidando su posición y dejando una huella única en la comunidad.</p>
+        <!-- Sección de historia -->
+        <section id="historia">
+            <h2>Historia</h2>
+            <p>El nacimiento del <b>Ejército General del Orden</b> se remonta a un evento trascendental: el raid ejecutado en la facción de Castellammare. Este raid no solo implicó el juicio y la expulsión del líder de la facción, sino que también desencadenó una serie de cambios significativos. En medio de este tumulto, <i>Alessandro570</i>, quien ocupaba el segundo puesto en la jerarquía de Castellammare, cedió su puesto a <i>edu1504</i>, emergiendo así como una figura clave. Al asumir el liderazgo, <i>edu1504</i>, junto a <i>BrinnesAt</i>, <i>d0uh___joako</i> y <i>pinaaa</i>, no solo tomaron las riendas de la facción, sino que también la transformaron radicalmente, moldeándola hasta convertirla en la entidad que conocemos en la actualidad.</p>
+            <p>Es crucial destacar que el <b>Ejército General del Orden</b> se distingue por su independencia de Castellammare. A pesar de que sus raíces se encuentran en ese conflicto, la facción ha trazado su propio camino y se ha consolidado como una fuerza autónoma y distinta. Esta separación de sus orígenes constituye un aspecto fundamental de su identidad.</p>
+            <p>La fecha oficial de fundación, el <b>16 de febrero de 2023</b>, marca el inicio formal de esta nueva entidad. Desde entonces, el <b>Ejército General del Orden</b> ha continuado evolucionando, consolidando su posición y dejando una huella única en la comunidad.</p>
+        </section>
+        
+        <!-- Botón para cargar comentarios -->
+        <section id="comentarios">
+            <h2>Comentarios</h2>
+            <div class="comentarios-btn-container">
+                <button class="disqus-btn" id="load-comments-btn">Cargar Comentarios</button>
             </div>
+                    <!-- Contenedor para los comentarios de Disqus -->
+            <div id="disqus-comments" style="display: none;"></div>
         </section>
-        
+
+
         <section id="redes-sociales">
             <h2>Redes sociales</h2>
             <div class="social-icons">
@@ -94,7 +101,6 @@
                 </a>
             </div>
         </section>
-        
              
     </main>
     
@@ -102,61 +108,21 @@
         <p class="derechos-reservados">&copy; Ejército General del Orden. Todos los derechos reservados</p>
     </footer>
 
+    <!-- Código para mostrar el número de comentarios -->
+    <script id="dsq-count-scr" src="//egodisqus.disqus.com/count.js" async></script>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const collapsible = document.querySelector('.collapsible');
-            const historiaTexto = document.querySelector('.historia-texto');
-            const expandIcon = document.querySelector('.expand-icon');
-
-            // Ocultar el texto de la historia inicialmente
-            historiaTexto.style.maxHeight = '0';
-
-            collapsible.addEventListener('click', function() {
-                const isExpanded = collapsible.classList.contains('expanded');
-                if (isExpanded) {
-                    historiaTexto.style.maxHeight = '0';
-                    expandIcon.style.transform = 'rotate(0deg)';
-                } else {
-                    historiaTexto.style.maxHeight = historiaTexto.scrollHeight + 'px';
-                    expandIcon.style.transform = 'rotate(90deg)';
-                }
-                collapsible.classList.toggle('expanded');
-            });
-
-
-            let index = 0;
-            const imagenes = document.querySelectorAll('.carrusel img');
-            const imagenWidth = imagenes[0].offsetWidth + 200; // Ancho de la imagen más el margen
-            const totalImagenes = imagenes.length;
-
-            // Establecer la posición inicial de las imágenes
-            imagenes.forEach((img, i) => {
-                img.style.transform = `translateX(${i * imagenWidth}px)`;
-            });
-
-            function cambiarImagen() {
-                index = (index + 1) % totalImagenes;
-                const translateX = -index * imagenWidth + 'px'; // Usar el ancho total de la imagen
-                imagenes.forEach(img => img.style.transition = 'transform 0.5s ease-in-out'); // Transición suave
-                imagenes.forEach(img => img.style.transform = `translateX(${translateX})`);
-
-                setTimeout(() => {
-                    if (index === 0) {
-                        imagenes.forEach(img => img.style.transition = 'none'); // Eliminar transición para el cambio instantáneo
-                        imagenes.forEach(img => img.style.transform = `translateX(${index * imagenWidth}px)`); // Mostrar la primera imagen
-                    }
-                }, 500); // Retraso de medio segundo antes de reiniciar el bucle
-
-                setTimeout(cambiarImagen, 5000); // Cambiar cada 5 segundos (5000 milisegundos)
-            }
-
-            cambiarImagen();
-
-            // Para manejar el tamaño de la ventana y mantener la respuesta
-            window.addEventListener('resize', function() {
-                const translateX = -index * imagenWidth + 'px';
-                imagenes.forEach(img => img.style.transform = `translateX(${translateX})`);
-            });
+        // Función para cargar los comentarios de Disqus al hacer clic en el botón
+        document.getElementById('load-comments-btn').addEventListener('click', function() {
+            // Mostrar el contenedor de comentarios
+            document.getElementById('disqus-comments').style.display = 'block';
+            // Cargar el script de Disqus para los comentarios
+            var d = document, s = d.createElement('script');
+            s.src = 'https://egodisqus.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            // Ocultar el botón después de cargar los comentarios
+            this.style.display = 'none';
         });
     </script>
 </body>

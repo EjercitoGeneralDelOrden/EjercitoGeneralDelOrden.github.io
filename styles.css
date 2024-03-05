@@ -154,32 +154,24 @@ footer {
     margin-top: 5px;
 }
 
-/* Estilos para el collapsible */
-.collapsible {
-    cursor: pointer;
+/* Estilo para el botón de comentarios de Disqus */
+.disqus-btn {
+    background-color: #4a5e8a; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Borde redondeado */
+    cursor: pointer; /* Cursor al pasar por encima */
+    transition: background-color 0.3s ease; /* Transición suave */
 }
 
-.collapsible h2 {
-    margin: 0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+/* Estilo para el botón de comentarios de Disqus al pasar el cursor */
+.disqus-btn:hover {
+    background-color: #3e5078; /* Color de fondo al pasar el cursor */
 }
 
-.collapsible .historia-texto {
-    overflow: hidden;
-    transition: max-height 0.5s ease-out;
-}
-
-.collapsible .historia-texto p {
-    margin: 10px 0;
-}
-
-.expand-icon {
-    margin-left: 5px;
-    transition: transform 0.3s ease;
-}
-
-.collapsible.expanded .expand-icon {
-    transform: rotate(90deg);
+/* Estilo para el contenedor del botón de comentarios */
+.comentarios-btn-container {
+    margin-bottom: 20px; /* Espacio debajo del botón */
 }
