@@ -42,21 +42,14 @@
             <p>Estamos emocionados de darte la bienvenida a nuestra comunidad y esperamos ansiosos tu participación activa en el Ejército General del Orden. ¡Nos vemos pronto en Discord!</p>
             
             <!-- Slider de imágenes -->
-            <div class="carrusel">
-                <div class="imagen-container" style="margin-right: 200px;">
-                    <img src="./media/sections/Act 1.png" alt="Imagen 1" style="width: 600px; height: 400px;">
-                </div>
-                <div class="imagen-container" style="margin-right: 200px;">
-                    <img src="./media/sections/Act 2.png" alt="Imagen 2" style="width: 600px; height: 400px;">
-                </div>
-                <div class="imagen-container" style="margin-right: 200px;">
-                    <img src="./media/sections/Act 3.png" alt="Imagen 3" style="width: 600px; height: 400px;">
-                </div>
-                <div class="imagen-container" style="margin-right: 200px;">
-                    <img src="./media/sections/Act 4.png" alt="Imagen 4" style="width: 600px; height: 400px;">
-                </div>
-                <div class="imagen-container">
-                    <img src="./media/sections/Act 5.png" alt="Imagen 5" style="width: 600px; height: 400px;">
+            <div class ="carrusel">
+                <div class="carrusel-inner">
+                    <img src="./media/sections/Act 1.png" alt="Imagen 1">
+                    <img src="./media/sections/Act 2.png" alt="Imagen 2">
+                    <img src="./media/sections/Act 3.png" alt="Imagen 3">
+                    <img src="./media/sections/Act 4.png" alt="Imagen 4">
+                    <img src="./media/sections/Act 5.png" alt="Imagen 5">
+                    <img src="./media/sections/Act 6.png" alt="Imagen 6">
                 </div>
             </div>
         </section>
@@ -121,41 +114,27 @@
     <script id="dsq-count-scr" src="//egodisqus.disqus.com/count.js" async></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            let index = 0;
-            const imagenes = document.querySelectorAll('.carrusel img');
-            const imagenWidth = imagenes[0].offsetWidth + 200; // Ancho de la imagen más el margen
-            const totalImagenes = imagenes.length;
-
-            // Establecer la posición inicial de las imágenes
-            imagenes.forEach((img, i) => {
-                img.style.transform = `translateX(${i * imagenWidth}px)`;
-            });
-
-            function cambiarImagen() {
-                index = (index + 1) % totalImagenes;
-                const translateX = -index * imagenWidth + 'px'; // Usar el ancho total de la imagen
-                imagenes.forEach(img => img.style.transition = 'transform 0.5s ease-in-out'); // Transición suave
-                imagenes.forEach(img => img.style.transform = `translateX(${translateX})`);
-
-                setTimeout(() => {
-                    if (index === 0) {
-                        imagenes.forEach(img => img.style.transition = 'none'); // Eliminar transición para el cambio instantáneo
-                        imagenes.forEach(img => img.style.transform = `translateX(${index * imagenWidth}px)`); // Mostrar la primera imagen
-                    }
-                }, 500); // Retraso de medio segundo antes de reiniciar el bucle
-
-                setTimeout(cambiarImagen, 5000); // Cambiar cada 5 segundos (5000 milisegundos)
+        let carruselInner = document.querySelector(".carrusel-inner");
+        let images = carruselInner.querySelectorAll("img");
+        let index = 0; // Comenzar desde la primera imagen
+        let direction = 1; // Dirección de avance inicial: 1 para adelante, -1 para atrás
+    
+        setInterval(function(){
+            // Calcular el desplazamiento en porcentaje
+            let percentage = index * -50;
+            carruselInner.style.transform = "translateX(" + percentage + "%)";
+            
+            // Actualizar el índice según la dirección
+            index += direction;
+            
+            // Cambiar la dirección si llegamos al final o al principio
+            if (index >= images.length - 2) {
+                direction = -1; // Cambiar la dirección a retroceso
+            } else if (index <= 0) {
+                direction = 1; // Cambiar la dirección a avance
             }
-
-            cambiarImagen();
-
-            // Para manejar el tamaño de la ventana y mantener la respuesta
-            window.addEventListener('resize', function() {
-                const translateX = -index * imagenWidth + 'px';
-                imagenes.forEach(img => img.style.transform = `translateX(${translateX})`);
-            });
-        });
+        }, 3000); // Intervalo de 3000ms o 3 segundos 
     </script>
+       
 </body>
 </html>

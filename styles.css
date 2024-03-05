@@ -94,24 +94,27 @@ footer {
     flex-grow: 1;
 }
 
-/* Estilos para el carrusel */
+/* Estilos para el slider */
 .carrusel {
-    display: flex;
     overflow: hidden;
-    margin: 20px auto;
+    width: 100%; /* Asegurar que ocupe todo el ancho disponible */
 }
 
-.imagen-container {
-    margin-right: 20px;
-    border-radius: 10px;
+.carrusel-inner {
+    display: flex;
+    height: 600px; /* Altura del carrusel */
+    transition: transform 0.5s ease; /* Transición suave */
 }
 
-.imagen-container img {
-    width: 600px;
-    height: 400px;
-    border-radius: 10px;
-    transition: transform 0.5s ease;
+.carrusel-inner img {
+    flex-shrink: 0; /* Evitar que las imágenes se ajusten */
+    width: 50%; /* Ancho del 50% */
+    height: auto; /* Mantener la relación de aspecto */
+    margin: 0 5px; /* Margen entre imágenes */
+    transition: transform 0.5s ease; /* Transición suave */
 }
+
+
 
 /* Estilos para la sección de redes sociales */
 #redes-sociales {
