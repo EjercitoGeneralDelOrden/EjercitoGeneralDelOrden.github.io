@@ -202,19 +202,17 @@ section h2 {
 
 /* Estilo para el texto de derechos reservados */
 .derechos-reservados {
-    text-align: center;
-    margin: 10px 0;
     position: relative; /* Cambiado a posición relativa */
     bottom: 0; /* Cambiado a bottom 0 */
     right: 0; /* Cambiado a right 0 */
+    margin: 10px; /* Añadido margen para separarlo del borde */
 }
 
-/* Estilo para el banner de derechos reservados */
+/* Estilo para el banner */
 .banner {
     background-color: #4a5e8a;
     color: #fff;
-    padding: 10px 0;
     text-align: center;
-    position: relative;
+    padding: 10px;
     margin-top: 20px;
 }
