@@ -107,13 +107,14 @@
     
     <footer>
         <!-- Elemento de audio y botones de control -->
-        <audio id="audioPlayer" controls loop autoplay>
-            <source src="tu_archivo_de_audio.mp3" type="audio/mp3">
-            Tu navegador no soporta el elemento de audio.
-        </audio>
-        <button onclick="document.getElementById('audioPlayer').pause()">Pausa</button>
-        <button onclick="skipNext()">Siguiente</button>
-        
+        <div class="audio-controls">
+            <audio id="audioPlayer" controls loop autoplay>
+                <source src="tu_archivo_de_audio.mp3" type="audio/mp3">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+            <button onclick="document.getElementById('audioPlayer').pause()">Pausa</button>
+            <button onclick="skipNext()">Siguiente</button>
+        </div>
         <!-- Banner de derechos reservados -->
         <div class="banner">
             <p class="derechos-reservados">&copy; Ejército General del Orden. Todos los derechos reservados</p>
