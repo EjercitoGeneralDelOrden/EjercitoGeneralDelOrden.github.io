@@ -106,7 +106,6 @@
     </main>
     
     <footer>
-        <p class="derechos-reservados">&copy; Ejército General del Orden. Todos los derechos reservados</p>
         <!-- Elemento de audio y botones de control -->
         <audio id="audioPlayer" controls loop autoplay>
             <source src="tu_archivo_de_audio.mp3" type="audio/mp3">
@@ -114,6 +113,11 @@
         </audio>
         <button onclick="document.getElementById('audioPlayer').pause()">Pausa</button>
         <button onclick="skipNext()">Siguiente</button>
+        
+        <!-- Banner de derechos reservados -->
+        <div class="banner">
+            <p class="derechos-reservados">&copy; Ejército General del Orden. Todos los derechos reservados</p>
+        </div>
     </footer>
 
 
