@@ -82,39 +82,22 @@ section h2 {
     color: #4a5e8a;
 }
 
-footer {
-    background-color: #4a5e8a;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-}
-
-.derechos-reservados {
-    margin: 0;
-    flex-grow: 1;
-}
-
 /* Estilos para el slider */
 .carrusel {
     overflow: hidden;
-    width: 100%; /* Asegurar que ocupe todo el ancho disponible */
+    width: 100%;
 }
 
 .carrusel-inner {
     display: flex;
-    height: 600px; /* Altura del carrusel */
-    transition: transform 0.5s ease; /* Transición suave */
 }
 
 .carrusel-inner img {
-    flex-shrink: 0; /* Evitar que las imágenes se ajusten */
-    width: 50%; /* Ancho del 50% */
-    height: auto; /* Mantener la relación de aspecto */
-    margin: 0 5px; /* Margen entre imágenes */
-    transition: transform 0.5s ease; /* Transición suave */
+    flex-shrink: 0;
+    width: 50%;
+    height: auto;
+    margin: 0 5px;
 }
-
-
 
 /* Estilos para la sección de redes sociales */
 #redes-sociales {
@@ -201,5 +184,37 @@ footer {
     .social-icons a span {
         font-size: 10px;
     }
+
+    /* Estilo para el botón "Anterior" */
+    footer button:nth-child(1) {
+        display: none; /* Oculta el botón "Anterior" en dispositivos móviles */
+    }
+
+    /* Estilo para el reproductor de audio */
+    #audioPlayer {
+        position: fixed;
+        top: 10px;
+        left: 10px; /* Alinea el reproductor de audio en la esquina superior izquierda */
+        width: calc(100% - 20px);
+        z-index: 1000; /* Asegura que esté sobre otros elementos */
+    }
 }
 
+/* Estilo para el texto de derechos reservados */
+.derechos-reservados {
+    text-align: center;
+    margin: 10px 0;
+    position: relative; /* Cambiado a posición relativa */
+    bottom: 0; /* Cambiado a bottom 0 */
+    right: 0; /* Cambiado a right 0 */
+}
+
+/* Estilo para el banner de derechos reservados */
+.banner {
+    background-color: #4a5e8a;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+}
