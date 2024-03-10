@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"> <!-- Agregar la fuente de Google Fonts -->
     <link rel="icon" type="image/png" href="./media/header/favicon-32x32.png"> <!-- Esta línea agrega el favicon -->
+
+    <style>
+        .carrusel-inner {
+            display: flex;
+            transition: transform 1s ease; /* Transición suave */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -62,7 +69,7 @@
             <p>La fecha oficial de fundación, el <b>16 de febrero de 2023</b>, marca el inicio formal de esta nueva entidad. Desde entonces, el <b>Ejército General del Orden</b> ha continuado evolucionando, consolidando su posición y dejando una huella única en la comunidad.</p> <p>¿Quieres saber mas sobre nuestros <a href="https://ejercitogeneraldelorden.github.io/cuerpos.html"target="_blank">Cuerpos e Academias?</a> </p>
         </section>
         
-            <!-- Sección de comentarios -->
+        <!-- Sección de comentarios -->
         <section id="comentarios">
             <h2>Comentarios</h2>
             <!-- Código de Disqus para los comentarios -->
@@ -81,6 +88,7 @@
             </script>            
             <noscript>Habilita javascript para ver los <a href="https://disqus.com/?ref_noscript">comentarios impulsados por Disqus.</a></noscript>
         </section>
+        
         <section id="redes-sociales">
             <h2>Redes sociales</h2>
             <div class="social-icons">
@@ -132,22 +140,22 @@
     
         setInterval(function(){
             // Calcular el desplazamiento en porcentaje
-            let percentage = index * -50;
+            let percentage = index * -16.6667; // 100% dividido entre el número de imágenes
             carruselInner.style.transform = "translateX(" + percentage + "%)";
             
             // Actualizar el índice según la dirección
             index += direction;
             
             // Cambiar la dirección si llegamos al final o al principio
-            if (index >= images.length - 2) {
+            if (index >= images.length - 1) {
                 direction = -1; // Cambiar la dirección a retroceso
             } else if (index <= 0) {
                 direction = 1; // Cambiar la dirección a avance
             }
-        }, 3000); // Intervalo de 3000ms o 3 segundos 
+        }, 5000); // Intervalo de 5000ms o 5 segundos 
 
         function skipNext() {
-            // Lógica para saltar a la siguiente canción
+            // Lógica para saltar a la siguiente imagen
         }
     </script>
        
