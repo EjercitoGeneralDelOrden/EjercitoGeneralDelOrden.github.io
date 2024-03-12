@@ -93,6 +93,20 @@
             margin: 0;
             font-size: 15px;
         }
+
+        /* Agrega estilo para ocultar la descripción por defecto */
+        .descripcion {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+
+        /* Muestra la descripción cuando se pasa el mouse sobre el contenedor */
+        .section-container:hover .descripcion {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -116,64 +130,127 @@
             <h2>Bienvenido a la sección de Cuerpos y Academias de EGO</h2>
             <p>Aquí puedes encontrar una breve descripción de los Cuerpos y Academias.</p>
         </section>
+        <section><h2>ACADEMIAS</h2></section>
 
-        <section>
-            <h2>Academias</h2>
+        <section class="section-container">
             <div class="logo-container">
-                <img src="/media/sections/AIP.png" alt="Logo de AIP">
+                <img src="AIP.png" alt="Logo de AIP">
                 <h1>AIP (Academia de Instrucción Profesional)</h1>
+                <div class="descripcion">
+                    <h1>AIP:</h1>
+                    <p> <b>La Academia de Instrucción Profesional (AIP)</b> se especializa en potenciar tu desarrollo para convertirte en un miembro destacado en la facción. Aquí, fortalecerás tus habilidades y valores fundamentales dentro de la facción, enfocándote en la preparación integral para convertirte en un Instructor sólido y contribuir activamente al mantenimiento y crecimiento continuo del Ejercito General del Orden.</p>
+                    <p><b>★ REQUISITOS:</b> Rango Mínimo: Voluntario de 3ra., Compromiso y disponibilidad, Seriedad</p>
+                    <p><b>★ BENEFICIOS:</b> Parche propio, Aspirar a obtener el cordón en el uniforme, Aptitud de Instructor, Aspirar a especializaciones, Icono de rol en discord, Gran repercusión en ascensos.</p>
+                </div>
             </div>
         </section>
 
-        <section>
+        <section class="section-container">
             <div class="logo-container">
                 <img src="/media/sections/APS.png" alt="Logo de APS">
                 <h1>APS (Academia de Profesionalización Superior)</h1>
+                <div class="descripcion">
+                    <h1>APS:</h1>
+                    <p><b>¿Qué es la Academia de Profesionalización Superior (APS)?</b>
+                    Es una institución interna del Ejército General del Orden, respaldada por el Estado Mayor y dirigida por experimentados líderes en el campo. Su misión principal es brindar instrucción profesional en las áreas más cruciales de la facción. A través de nuestro programa de formación, te prepararemos para superar un examen final que debes aprobar para ascender de categoría.
+                    </p>
+                    <h1>¿Cuál es el propósito de la APS?</h1>
+                    <p>El propósito de nuestra academia es claro: avanzar de categoría, adquirir conocimientos y mejorar. Aquellos miembros que no cursen nuestro programa se enfrentarán a dificultades para ascender a una categoría superior, lo que resultará en un estancamiento en su posición actual.</p>
+                </div>
             </div>
         </section>
 
-        <section>
-            <h2>Cuerpos</h2>
+<section><h2>CUERPOS</h2></section>
+
+        <section class="section-container">
             <div class="logo-container">
                 <img src="/media/sections/BOEL.png" alt="Logo de BOEL">
                 <h1>BOEL (Brigada de Operaciones Especiales Lautaro)</h1>
+                <div class="descripcion">
+                    <h1>BOEL:</h1>
+                    <p><b>La Brigada de Operaciones Lautaro (BOEL)</b>  es un cuerpo especializado que conforma al Ejército General del Orden, el cual se enfoca en diversas áreas de competencia y habilidades. Sus miembros reciben riguroso entrenamiento y se especializan en una amplia gama de operaciones tanto tácticas como estratégicas.</p>
+                    <p>
+                    ★ Requisitos
+                    ➢ Rango Mínimo: Voluntario De 4ta
+                    ➢ Comprometerse al 100% con la facción</p>
+
+                    </p>★ Beneficios
+                    ➢ Parche Propio
+                    ➢ Especialización BOEL
+                    ➢ Repercusiones en ascensos</p>
+                </div>
             </div>
         </section>
 
-        <section>
+        <section class="section-container">
             <div class="logo-container">
                 <img src="/media/sections/CuerpoInstructores.png" alt="Logo del Cuerpo de Instructores">
                 <h1>Cuerpo de Instructores</h1>
+                <div class="descripcion">
+                    <!-- Contenido de la descripción -->
+                </div>
             </div>
         </section>
 
-        <section>
+        <section class="section-container">
             <div class="logo-container">
                 <img src="/media/sections/AyU.png" alt="Logo de AyU">
                 <h1>Arquitectura y Urbanismo (AyU)</h1>
+                <div class="descripcion">
+                    <h1>AYU:</h1>
+                    <p><b>Arquitectura y Urbanismo</b> ・Como miembros de AyU, nuestro objetivo es asegurar que los distritos y sectores de la facción sean estéticamente agradables, funcionales y seguros. Trabajamos de manera organizada para lograr una coordinación eficiente y garantizar que todas las estructuras y diseños cumplan con las normas y reglas establecidas por la facción.
+                    </p> 
+                    <p><b>Agradecimientos</b> ・Nos enorgullece que sean parte de este proyecto y estamos comprometidos con el desarrollo de nuestras habilidades de construcción y diseño para garantizar que cada estructura cumpla con los más altos estándares de calidad. Nos esforzamos por crear una comunidad de aprendizaje, colaboración y respeto mutuo, donde todos los miembros puedan desatar su creatividad y talento para la construcción.</p>
+                </div>
             </div>
         </section>
 
-        <section>
+        <section class="section-container">
             <div class="logo-container">
                 <img src="/media/sections/DSA.png" alt="Logo de DSA">
                 <h1>Dirección de Salud y Apoyo</h1>
+                <div class="descripcion">
+                   <h1>DIRECCIÓN DE SALUD Y APOYO</h1>
+                   <p><b>La Dirección de Apoyo y Salud</b> esta enfocado en el apoyo en situaciones de combate o recuperación de personal. Los miembros sanitarios tienen la responsabilidad de colaborar en la preservación y protección de la vida, además de proporcionar atención médica a los integrantes en que lo necesiten.</p> <p> <b>En Dirección de Apoyo y Salud</b> tenemos como meta formar personal de sanidad capacitados para proporcionar atención en momentos que la requieran a los integrantes de la facción en los diferentes escenarios que se puedan presentar. A su vez, crear en el personal un sentido de responsabilidad, profesionalismo, disciplina.</p> <p><b>En Dirección de Apoyo y Salud tenemos como prioridad:</b></p></p> </p>1.- Conservar la resistencia y vida de los integrantes en buen estado durante una batalla.</p> <p>2.- Procurar la recuperación de los efectivos, por la aplicación de los principios y procedimientos de base en Minecraft.</p>
+                   <p>3.- Formar enfermeros y enfermeras e instruir a las tropas de sanidad.</p>
+                   <p>4.- Perfeccionar los conocimientos de los miembros y a su vez, formar especialistas con diferentes cualidades.</p>
+                   <p>5.- Formar un sentimiento de compañerismo y apoyo mutuo entre los miembros que conforman este cuerpo.</p>
+
+                </div>
             </div>
         </section>
 
-        <section>
-            <div class="logo-container">
-                <img src="/media/sections/CTEA.png" alt="Logo de CTEA">
-                <h1>CTEA (Cuerpo de Tecnología Especializada en Artillería)</h1>
+        <section class="section-container">
+    <div class="logo-container">
+        <img src="/media/sections/CTEA.png" alt="Logo de CTEA">
+        <h1>CTEA (Cuerpo de Tecnología Especializada en Artillería)</h1>
+        <div class="descripcion">
+            <h1>𝐂𝐮𝐞𝐫𝐩𝐨 𝐝𝐞 𝐓𝐞𝐜𝐧𝐨𝐥𝐨𝐠í𝐚 𝐄𝐬𝐩𝐞𝐜𝐢𝐚𝐥𝐢𝐳𝐚𝐝𝐚 𝐞𝐧 𝐀𝐫𝐭𝐢𝐥𝐥𝐞𝐫í𝐚 (𝐂𝐓𝐄𝐀)</h1>
+            <h2>𝐈𝐧𝐠𝐫𝐞𝐬𝐨</h2>
+            <p>El Cuerpo de Tecnología Especializada en Artillería, conocido como "CTEA", opera como un componente vital dentro del Ejército General del Orden, centrado en proporcionar apoyo tecnológico, mecánico y analítico fundamental para la facción.</p>
+            <p>Este cuerpo se estructura en tres áreas especializadas:</p>
+            <ul>
+                <li><strong>Artillería:</strong> Responsable de la implementación segura de mecanismos de redstone, con un enfoque principal en cañones, para su aplicación efectiva en el combate.</li>
+                <li><strong>Ingeniería:</strong> Asume la tarea de implementar y configurar nuevas funciones en los servidores de la facción, garantizando un funcionamiento eficiente y actualizado.</li>
+                <li><strong>Desarrollo:</strong> Encargado de introducir nuevas actividades en la facción y de buscar continuamente su mejora, contribuyendo al crecimiento constante de la misma.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
             </div>
         </section>
 
-        <section>
+        <section class="section-container">
             <div class="logo-container">
                 <img src="/media/sections/Sastreria.png" alt="Logo de Sastrería del Orden">
                 <h1>Sastrería del Orden</h1>
+                <div class="descripcion">
+                    <!-- Contenido de la descripción -->
+                </div>
             </div>
         </section>
+
     </main>
     
     <!-- Footer -->
