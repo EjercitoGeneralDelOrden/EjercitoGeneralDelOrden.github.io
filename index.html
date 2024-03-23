@@ -10,13 +10,6 @@
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"> <!-- Agregar la fuente de Google Fonts -->
     <link rel="icon" type="image/png" href="./media/header/favicon-32x32.png"> <!-- Esta línea agrega el favicon -->
-
-    <style>
-        .carrusel-inner {
-            display: flex;
-            transition: transform 1s ease; /* Transición suave */
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -33,7 +26,13 @@
             </ul>
         </nav>        
     </header>
-    
+    <!-- Formulario para agregar música desde YouTube -->
+<input type="text" id="youtubeLink" name="youtubeLink" placeholder="Inserta el enlace de YouTube" required>
+<button type="button" onclick="cargarVideo()">Agregar Música</button>
+
+<!-- Contenedor para el reproductor de YouTube -->
+<div id="youtubePlayerContainer"></div>
+
     <main>
         <section id="introduccion">
             <h2>Introducción</h2>
@@ -66,10 +65,10 @@
             <h2>Historia</h2>
             <p>El nacimiento del <b>Ejército General del Orden</b> se remonta a un evento trascendental: el raid ejecutado en la facción de Castellammare. Este raid no solo implicó el juicio y la expulsión del líder de la facción, sino que también desencadenó una serie de cambios significativos. En medio de este tumulto, <i>Alessandro570</i>, quien ocupaba el segundo puesto en la jerarquía de Castellammare, cedió su puesto a <i>edu1504</i>, emergiendo así como una figura clave. Al asumir el liderazgo, <i>edu1504</i>, junto a <i>BrinnesAt</i>, <i>d0uh___joako</i> y <i>pinaaa</i>, no solo tomaron las riendas de la facción, sino que también la transformaron radicalmente, moldeándola hasta convertirla en la entidad que conocemos en la actualidad.</p>
             <p>Es crucial destacar que el <b>Ejército General del Orden</b> se distingue por su independencia de Castellammare. A pesar de que sus raíces se encuentran en ese conflicto, la facción ha trazado su propio camino y se ha consolidado como una fuerza autónoma y distinta. Esta separación de sus orígenes constituye un aspecto fundamental de su identidad.</p>
-            <p>La fecha oficial de fundación, el <b>16 de febrero de 2023</b>, marca el inicio formal de esta nueva entidad. Desde entonces, el <b>Ejército General del Orden</b> ha continuado evolucionando, consolidando su posición y dejando una huella única en la comunidad.</p> <p>¿Quieres saber mas sobre nuestros <a href="https://ejercitogeneraldelorden.github.io/cuerpos.html"target="_blank">Cuerpos e Academias?</a> </p>
+            <p>La fecha oficial de fundación, el <b>16 de febrero de 2023</b>, marca el inicio formal de esta nueva entidad. Desde entonces, el <b>Ejército General del Orden</b> ha continuado evolucionando, consolidando su posición y dejando una huella única en la comunidad.</p> <p>¿Quieres saber mas sobre nuestros <a href="Cuerpos.html"target="_blank">Cuerpos e Academias?</a> </p>
         </section>
         
-        <!-- Sección de comentarios -->
+            <!-- Sección de comentarios -->
         <section id="comentarios">
             <h2>Comentarios</h2>
             <!-- Código de Disqus para los comentarios -->
@@ -88,7 +87,6 @@
             </script>            
             <noscript>Habilita javascript para ver los <a href="https://disqus.com/?ref_noscript">comentarios impulsados por Disqus.</a></noscript>
         </section>
-        
         <section id="redes-sociales">
             <h2>Redes sociales</h2>
             <div class="social-icons">
@@ -140,24 +138,52 @@
     
         setInterval(function(){
             // Calcular el desplazamiento en porcentaje
-            let percentage = index * -16.6667; // 100% dividido entre el número de imágenes
+            let percentage = index * -50;
             carruselInner.style.transform = "translateX(" + percentage + "%)";
             
             // Actualizar el índice según la dirección
             index += direction;
             
             // Cambiar la dirección si llegamos al final o al principio
-            if (index >= images.length - 1) {
+            if (index >= images.length - 2) {
                 direction = -1; // Cambiar la dirección a retroceso
             } else if (index <= 0) {
                 direction = 1; // Cambiar la dirección a avance
             }
-        }, 6000); // Intervalo de 5000ms o 5 segundos 
+        }, 3000); // Intervalo de 3000ms o 3 segundos 
 
         function skipNext() {
-            // Lógica para saltar a la siguiente imagen
+            // Lógica para saltar a la siguiente canción
         }
     </script>
-       
+  <script>
+    // Función para cargar el reproductor de YouTube
+    function cargarVideo() {
+        // Obtener el enlace de YouTube ingresado por el usuario
+        var youtubeLink = document.getElementById('youtubeLink').value;
+        
+        // Extraer el ID del video de YouTube
+        var videoId = youtubeLink.split('v=')[1];
+
+        // Crear el reproductor de YouTube
+        var iframe = document.createElement('iframe');
+        iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&mute=1&loop=1&playlist=' + videoId);
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allow', 'autoplay');
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.style.width = '0'; // Hacer que el reproductor sea invisible
+        iframe.style.height = '0'; // Hacer que el reproductor sea invisible
+
+        // Eliminar el reproductor existente, si lo hay
+        var existingPlayer = document.getElementById('youtubePlayer');
+        if (existingPlayer) {
+            existingPlayer.parentNode.removeChild(existingPlayer);
+        }
+
+        // Agregar el nuevo reproductor al documento
+        document.getElementById('youtubePlayerContainer').appendChild(iframe);
+    }
+</script>
+
 </body>
 </html>
