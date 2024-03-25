@@ -141,9 +141,6 @@ section h2 {
 }
 
 /* Estilos para dispositivos móviles */
-@media only screen and (max-width: 600px) {
-    header {
-        padding: 10px;
     }
 
     .logo-container h1 {
@@ -185,19 +182,8 @@ section h2 {
         font-size: 10px;
     }
 
-    /* Estilo para el botón "Anterior" */
-    footer button:nth-child(1) {
-        display: none; /* Oculta el botón "Anterior" en dispositivos móviles */
-    }
 
-    /* Estilo para el reproductor de audio */
-    #audioPlayer {
-        position: fixed;
-        top: 10px;
-        left: 10px; /* Alinea el reproductor de audio en la esquina superior izquierda */
-        width: calc(100% - 20px);
-        z-index: 1000; /* Asegura que esté sobre otros elementos */
-    }
+    
 }
 
 /* Estilo para el texto de derechos reservados */
@@ -219,3 +205,25 @@ section h2 {
     width: 100%;
     z-index: 999; /* Asegura que esté por encima de otros elementos */
 }
+/* Estilo para el footer */
+footer {
+    position: fixed; /* Fija el footer en la parte inferior de la ventana */
+    bottom: 0; /* Lo coloca al fondo de la ventana */
+    width: 100%; /* Abarca todo el ancho de la ventana */
+}
+
+/* Estilo para el panel de la canción */
+#audioPanel {
+    position: fixed; /* Posición absoluta con respecto al footer */
+    right: 0; /* Lo coloca a la derecha del footer */
+    top: 50%; /* Lo coloca verticalmente centrado */
+    transform: translateY(-50%); /* Ajusta la posición vertical */
+    background-color: rgba(0, 0, 0, 0.8); /* Color de fondo transparente */
+    padding: 10px; /* Espacio interno */
+    box-sizing: border-box; /* Incluye el relleno en el ancho total */
+    z-index: 1; /* Asegura que esté sobre el contenido del footer */
+    display: flex; /* Muestra los elementos en una línea */
+    flex-direction: column; /* Ordena los elementos en forma vertical */
+}
+
+
