@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"> <!-- Agregar la fuente de Google Fonts -->
     <link rel="icon" type="image/png" href="./media/header/favicon-32x32.png"> <!-- Esta línea agrega el favicon -->
+
+    
 </head>
+    
 <body>
     <header>
         <div class="logo-container">
@@ -26,14 +29,11 @@
             </ul>
         </nav>        
     </header>
-    <!-- Formulario para agregar música desde YouTube -->
-<input type="text" id="youtubeLink" name="youtubeLink" placeholder="Inserta el enlace de YouTube" required>
-<button type="button" onclick="cargarVideo()">Agregar Música</button>
-
-<!-- Contenedor para el reproductor de YouTube -->
-<div id="youtubePlayerContainer"></div>
 
     <main>
+  
+    
+        
         <section id="introduccion">
             <h2>Introducción</h2>
             <p>¡Bienvenido a la página web del Ejército General del Orden!
@@ -112,20 +112,18 @@
     </main>
     
     <footer>
-        <!-- Elemento de audio y botones de control -->
-        <audio id="audioPlayer" controls loop autoplay>
-            <source src="tu_archivo_de_audio.mp3" type="audio/mp3">
-            Tu navegador no soporta el elemento de audio.
-        </audio>
-        <button onclick="document.getElementById('audioPlayer').pause()">Pausa</button>
-        <button onclick="skipNext()">Siguiente</button>
         
         <!-- Banner de derechos reservados -->
         <div class="banner">
             <p class="derechos-reservados">&copy; Ejército General del Orden. Todos los derechos reservados</p>
         </div>
-    </footer>
+        
+         <audio controls loop autoplay>
+            <source src="media/musica.mp3" type="audio/mp3">
+            Tu navegador no soporta el elemento de audio.
+          </audio>
 
+    </footer>
 
     <!-- Código para mostrar el número de comentarios -->
     <script id="dsq-count-scr" src="//egodisqus.disqus.com/count.js" async></script>
@@ -156,32 +154,11 @@
             // Lógica para saltar a la siguiente canción
         }
     </script>
-  <script>
-    // Función para cargar el reproductor de YouTube
-    function cargarVideo() {
-        // Obtener el enlace de YouTube ingresado por el usuario
-        var youtubeLink = document.getElementById('youtubeLink').value;
-        
-        // Extraer el ID del video de YouTube
-        var videoId = youtubeLink.split('v=')[1];
 
-        // Crear el reproductor de YouTube
-        var iframe = document.createElement('iframe');
-        iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&mute=1&loop=1&playlist=' + videoId);
-        iframe.setAttribute('frameborder', '0');
-        iframe.setAttribute('allow', 'autoplay');
-        iframe.setAttribute('allowfullscreen', '');
-        iframe.style.width = '0'; // Hacer que el reproductor sea invisible
-        iframe.style.height = '0'; // Hacer que el reproductor sea invisible
-
-        // Eliminar el reproductor existente, si lo hay
-        var existingPlayer = document.getElementById('youtubePlayer');
-        if (existingPlayer) {
-            existingPlayer.parentNode.removeChild(existingPlayer);
-        }
-
-        // Agregar el nuevo reproductor al documento
-        document.getElementById('youtubePlayerContainer').appendChild(iframe);
+<!-- Script para la función skipNext -->
+<script>
+    function skipNext() {
+        // Lógica para saltar a la siguiente canción
     }
 </script>
 
