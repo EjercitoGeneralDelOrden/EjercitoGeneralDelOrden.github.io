@@ -17,7 +17,7 @@
 <body>
     <header>
         <div class="logo-container">
-            <img src="./media/header/logo.png" alt="Logo de EGO">
+            <img src="media/logo.png" alt="Logo de EGO">
             <h1>Ejército General del Orden</h1>
         </div>
         <nav>
@@ -50,7 +50,7 @@
             <!-- Slider de imágenes -->
             <div class ="carrusel">
                 <div class="carrusel-inner">
-                    <img src="./media/sections/Act 1.png" alt="Imagen 1">
+                    <img src="./media/sections/Act  1.png" alt="Imagen 1">
                     <img src="./media/sections/Act 2.png" alt="Imagen 2">
                     <img src="./media/sections/Act 3.png" alt="Imagen 3">
                     <img src="./media/sections/Act 4.png" alt="Imagen 4">
@@ -65,7 +65,7 @@
             <h2>Historia</h2>
             <p>El nacimiento del <b>Ejército General del Orden</b> se remonta a un evento trascendental: el raid ejecutado en la facción de Castellammare. Este raid no solo implicó el juicio y la expulsión del líder de la facción, sino que también desencadenó una serie de cambios significativos. En medio de este tumulto, <i>Alessandro570</i>, quien ocupaba el segundo puesto en la jerarquía de Castellammare, cedió su puesto a <i>edu1504</i>, emergiendo así como una figura clave. Al asumir el liderazgo, <i>edu1504</i>, junto a <i>BrinnesAt</i>, <i>d0uh___joako</i> y <i>pinaaa</i>, no solo tomaron las riendas de la facción, sino que también la transformaron radicalmente, moldeándola hasta convertirla en la entidad que conocemos en la actualidad.</p>
             <p>Es crucial destacar que el <b>Ejército General del Orden</b> se distingue por su independencia de Castellammare. A pesar de que sus raíces se encuentran en ese conflicto, la facción ha trazado su propio camino y se ha consolidado como una fuerza autónoma y distinta. Esta separación de sus orígenes constituye un aspecto fundamental de su identidad.</p>
-            <p>La fecha oficial de fundación, el <b>16 de febrero de 2023</b>, marca el inicio formal de esta nueva entidad. Desde entonces, el <b>Ejército General del Orden</b> ha continuado evolucionando, consolidando su posición y dejando una huella única en la comunidad.</p> <p>¿Quieres saber sobre nuestros <a href="https://ejercitogeneraldelorden.github.io/cuerpos.html"target="_blank">Cuerpos e Academias?</a> </p>
+            <p>La fecha oficial de fundación, el <b>16 de febrero de 2023</b>, marca el inicio formal de esta nueva entidad. Desde entonces, el <b>Ejército General del Orden</b> ha continuado evolucionando, consolidando su posición y dejando una huella única en la comunidad.</p> <p>¿Quieres saber mas sobre nuestros <a href="Cuerpos.html"target="_blank">Cuerpos e Academias?</a> </p>
         </section>
         
             <!-- Sección de comentarios -->
@@ -111,55 +111,50 @@
              
     </main>
     
-    <footer>
-        
-        <!-- Banner de derechos reservados -->
-        <div class="banner">
-            <p class="derechos-reservados">&copy; Ejército General del Orden. Todos los derechos reservados</p>
-        </div>
-        
-         <audio controls loop autoplay>
-            <source src="/tree/main/media/Songs/musica 1.mp3" type="audio/mp3">
-            Tu navegador no soporta el elemento de audio.
-          </audio>
 
-    </footer>
+    <footer>
+    <!-- Contenedor del reproductor de audio -->
+    <div id="audioPlayer">
+        <!-- Reproductor de audio -->
+        <audio controls loop autoplay>
+            <source src="media/musica.mp3" type="audio/mp3">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+    </div>
+    <!-- Banner de derechos reservados -->
+    <div class="banner">
+        <p class="derechos-reservados">&copy; Ejército General del Orden. Todos los derechos reservados</p>
+    </div>
+</footer>
+
 
     <!-- Código para mostrar el número de comentarios -->
     <script id="dsq-count-scr" src="//egodisqus.disqus.com/count.js" async></script>
-
-    <script>
-        let carruselInner = document.querySelector(".carrusel-inner");
-        let images = carruselInner.querySelectorAll("img");
-        let index = 0; // Comenzar desde la primera imagen
-        let direction = 1; // Dirección de avance inicial: 1 para adelante, -1 para atrás
     
-        setInterval(function(){
-            // Calcular el desplazamiento en porcentaje
-            let percentage = index * -50;
-            carruselInner.style.transform = "translateX(" + percentage + "%)";
-            
-            // Actualizar el índice según la dirección
-            index += direction;
-            
-            // Cambiar la dirección si llegamos al final o al principio
-            if (index >= images.length - 2) {
-                direction = -1; // Cambiar la dirección a retroceso
-            } else if (index <= 0) {
-                direction = 1; // Cambiar la dirección a avance
-            }
-        }, 3000); // Intervalo de 3000ms o 3 segundos 
+    <script>
+        
+let carruselInner = document.querySelector(".carrusel-inner");
+let images = carruselInner.querySelectorAll("img");
+let index = 0; // Comenzar desde la primera imagen
+let direction = 1; // Dirección de avance inicial: 1 para adelante, -1 para atrás
 
-        function skipNext() {
-            // Lógica para saltar a la siguiente canción
-        }
-    </script>
-
-<!-- Script para la función skipNext -->
-<script>
-    function skipNext() {
-        // Lógica para saltar a la siguiente canción
+setInterval(function(){
+    // Calcular el desplazamiento en porcentaje
+    let percentage = index * -50;
+    carruselInner.style.transition = "transform 0.5s ease"; // Agregar transición
+    carruselInner.style.transform = "translateX(" + percentage + "%)";
+    
+    // Actualizar el índice según la dirección
+    index += direction;
+    
+    // Cambiar la dirección si llegamos al final o al principio
+    if (index >= images.length - 2) {
+        direction = -1; // Cambiar la dirección a retroceso
+    } else if (index <= 0) {
+        direction = 1; // Cambiar la dirección a avance
     }
+}, 3000); // Intervalo de 3000ms o 3 segundos 
+
 </script>
 
 </body>
