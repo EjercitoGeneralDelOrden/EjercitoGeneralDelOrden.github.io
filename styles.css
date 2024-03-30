@@ -141,8 +141,7 @@ section h2 {
 }
 
 /* Estilos para dispositivos móviles */
-    }
-
+@media only screen and (max-width: 600px) {
     .logo-container h1 {
         font-size: 20px;
     }
@@ -181,49 +180,35 @@ section h2 {
     .social-icons a span {
         font-size: 10px;
     }
-
-
-    
 }
 
-/* Estilo para el texto de derechos reservados */
-.derechos-reservados {
-    text-align: center;
-    margin: 10px 0;
-    position: relative; /* Cambiado a posición relativa */
-    bottom: 0; /* Cambiado a bottom 0 */
-    right: 0; /* Cambiado a right 0 */
+/* Estilo para el panel de audio */
+#audioPlayer {
+    position: fixed; /* Posición fija */
+    bottom: 0; /* Alinear en la parte inferior */
+    right: 0; /* Alinear a la derecha */
+    padding: 10px; /* Espaciado interno */
+    box-sizing: border-box; /* Incluir el rellado en el tamaño total */
+    z-index: 1000; /* Asegurar que esté sobre otros elementos, ajusta según sea necesario */
 }
 
+/* Estilo para los controles de audio */
+#audioPlayer audio {
+    width: 200px; /* Ancho del reproductor de audio */
+    background-color: transparent; /* Fondo transparente */
+    border: none; /* Eliminar borde */
+    color: #fff; /* Color del texto */
+    z-index: 1000; /* Asegurar que esté sobre otros elementos, ajusta según sea necesario */
+}
+
+/* Estilo para el texto de derechos reservados en el banner */
 .banner {
-    background-color: #4a5e8a;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 999; /* Asegura que esté por encima de otros elementos */
+    background-color: #4a5e8a; /* Color de fondo del banner */
+    color: #fff; /* Color del texto */
+    padding: 10px 0; /* Espaciado interno superior e inferior */
+    text-align: center; /* Alinear texto al centro */
+    position: fixed; /* Posición fija */
+    bottom: 0; /* Alinear en la parte inferior */
+    width: 100%; /* Ancho completo */
+    z-index: 999; /* Capa z-index para asegurar que esté sobre otros elementos */
 }
-/* Estilo para el footer */
-footer {
-    position: fixed; /* Fija el footer en la parte inferior de la ventana */
-    bottom: 0; /* Lo coloca al fondo de la ventana */
-    width: 100%; /* Abarca todo el ancho de la ventana */
-}
-
-/* Estilo para el panel de la canción */
-#audioPanel {
-    position: fixed; /* Posición absoluta con respecto al footer */
-    right: 0; /* Lo coloca a la derecha del footer */
-    top: 50%; /* Lo coloca verticalmente centrado */
-    transform: translateY(-50%); /* Ajusta la posición vertical */
-    background-color: rgba(0, 0, 0, 0.8); /* Color de fondo transparente */
-    padding: 10px; /* Espacio interno */
-    box-sizing: border-box; /* Incluye el relleno en el ancho total */
-    z-index: 1; /* Asegura que esté sobre el contenido del footer */
-    display: flex; /* Muestra los elementos en una línea */
-    flex-direction: column; /* Ordena los elementos en forma vertical */
-}
-
-
