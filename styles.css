@@ -1,5 +1,44 @@
 /* Estilos generales */
+
 body {
+  font-family: 'Merriweather', serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  background-color: #4a5e8a;
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #4a5e8a;
+  display: flex; /* Hacer que los elementos de navegación estén en línea */
+}
+
+.header li {
+  display: inline-block;
+}
+
+.header li a {
+  color: #fff;
+  display: block;
+  padding: 20px 20px;
+  text-decoration: none;
+  transition: color 0.2s ease; /* Agregar transición al cambio de color */
     font-family: 'Merriweather', serif;
     margin: 0;
     padding: 0;
@@ -7,6 +46,8 @@ body {
     color: #333;
 }
 
+.header li a:hover {
+  color: #afafaf; /* Cambiar color del texto en hover */
 header {
     background-color: #4a5e8a;
     color: #fff;
@@ -16,11 +57,56 @@ header {
     align-items: center;
 }
 
+
 .logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container img {
+  padding: 12px;
+  max-width: 50px;
+}
+
+.header .logo {
+  color: #fff;
+  font-size: 1.25rem;
+  padding: 20px 0;
+  text-decoration: none;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  padding: 20px;
+  user-select: none;
+  display: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
     display: flex;
     align-items: center;
 }
 
+.header .menu-icon .navicon:before {
+  top: 5px;
 .logo-container h1 {
     margin: 0;
     font-size: 28px;
@@ -30,11 +116,17 @@ header {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+.header .menu-icon .navicon:after {
+  top: -5px;
 .logo-container img {
     width: 50px;
     margin-right: 10px;
 }
 
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -42,14 +134,22 @@ nav ul {
     display: flex;
 }
 
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
 nav ul li {
     margin-right: 30px;
 }
 
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+  top: 0;
 nav ul li:last-child {
     margin-right: 0;
 }
 
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+  top: 0;
 nav ul li a {
     color: #fff;
     text-decoration: none;
@@ -58,87 +158,62 @@ nav ul li a {
     transition: color 0.3s ease;
 }
 
+.header .menu-btn:checked ~ ul {
+  display: flex; /* Mostrar elementos de navegación en línea */
+  flex-direction: column; /* Aplicar dirección de columna */
+  align-items: flex-start; /* Alinear elementos al inicio */
 nav ul li a:hover {
     color: #ffc107;
 }
 
+/* 48em = 768px */
+
+@media (max-width: 48em) {
+  .header {
+    flex-direction: row; /* Cambiar a fila */
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: center; /* Centrar verticalmente */
+  }
+
+
+  .header .menu-icon {
+    display: block;
+  }
+
+  .header .menu-btn {
+    display: none;
+  }
+
+  .header ul {
+    display: none;
+  }
+
+  .header .menu-btn:checked ~ ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%; /* Ancho completo */
+  }
+
+  .header li a {
+    padding: 10px 20px; /* Reducir el espacio entre elementos */
+  }
 nav ul li a.active {
     color: #ffc107;
 }
 
+
 main {
+    padding: 100px 20px;
     padding: 20px;
 }
 
 section {
-    margin-bottom: 30px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-section h2 {
-    color: #4a5e8a;
-}
-
-/* Estilos para el slider */
-.carrusel {
-    overflow: hidden;
-    width: 100%;
-}
-
-.carrusel-inner {
-    display: flex;
-}
-
-.carrusel-inner img {
-    flex-shrink: 0;
-    width: 50%;
-    height: auto;
-    margin: 0 5px;
-}
-
-/* Estilos para la sección de redes sociales */
-#redes-sociales {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.social-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.social-icons a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #333;
-    transition: transform 0.3s ease;
-    display: inline-block;
-}
-
-.social-icons a span {
-    display: block;
-    margin-top: 5px;
-    font-family: 'Merriweather', serif;
-    color: #333;
-    font-weight: bold;
-}
-
-.social-icons a:hover {
-    transform: translateY(-5px);
-}
-
-.social-icons a:hover img {
-    transform: scale(1.2);
-}
-
-.social-icons a span {
+@@ -233,23 +139,67 @@ section h2 {
     display: block;
     margin-top: 5px;
 }
+/* Estilo para el panel de audio
 
 /* Estilos para dispositivos móviles */
 @media only screen and (max-width: 600px) {
@@ -184,6 +259,12 @@ section h2 {
 
 /* Estilo para el panel de audio */
 #audioPlayer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    box-sizing: border-box; 
+    z-index: 1000;
     position: fixed; /* Posición fija */
     bottom: 0; /* Alinear en la parte inferior */
     right: 0; /* Alinear a la derecha */
@@ -194,6 +275,12 @@ section h2 {
 
 /* Estilo para los controles de audio */
 #audioPlayer audio {
+    width: 200px; 
+    background-color: transparent; 
+    border: none; 
+    color: #fff; 
+    z-index: 1000;
+}*/
     width: 200px; /* Ancho del reproductor de audio */
     background-color: transparent; /* Fondo transparente */
     border: none; /* Eliminar borde */
