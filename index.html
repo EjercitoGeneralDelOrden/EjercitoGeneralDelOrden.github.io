@@ -1,212 +1,264 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Metadatos para el control de caché -->
-    <meta http-equiv="cache-control" content="no-cache">
-    <meta http-equiv="expires" content="0">
-    <meta http-equiv="pragma" content="no-cache">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <title>Ejército General del Orden (EGO)</title>
-    <!-- Fuente de Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap">
-    <!-- Hoja de estilos personalizada -->
-    <link rel="stylesheet" href="./styles.css">
-    <!-- Icono de favicon -->
-    <link rel="icon" type="image/png" href="./media/header/favicon-32x32.png">
-        <!-- Chatbro Widget Embed Code -->
-    <script id="chatBroEmbedCode">
-            function ChatbroLoader(chats, async) {
-                async = !1 !== async;
-                var params = {
-                    embedChatsParameters: chats instanceof Array ? chats : [chats],
-                    lang: navigator.language || navigator.userLanguage,
-                    needLoadCode: 'undefined' == typeof Chatbro,
-                    embedParamsVersion: localStorage.embedParamsVersion,
-                    chatbroScriptVersion: localStorage.chatbroScriptVersion
-                }, xhr = new XMLHttpRequest;
-                xhr.withCredentials = !0, xhr.onload = function () {
-                    eval(xhr.responseText)
-                }, xhr.onerror = function () {
-                    console.error('Chatbro loading error')
-                }, xhr.open('GET', 'https://www.chatbro.com/embed.js?' + btoa(unescape(encodeURIComponent(JSON.stringify(params)))), async), xhr.send()
-            }
-            ChatbroLoader({
-                encodedChatId: '88y73'
-            });
-    </script>
-</head>
-<body>
-    <header class="header">
-        <!-- Contenedor del logo y nombre de la facción -->
-        <div class="logo-container">
-            <img src="media/header/logo.png" alt="Logo de la facción">
-            <a href="#" class="logo">Ejército General del Orden</a>
-        </div>
-        <!-- Contenedor del menú de navegación -->
-        <div class="nav-container">
-            <!-- Botón para desplegar el menú en dispositivos móviles -->
-            <input class="menu-btn" type="checkbox" id="menu-btn" />
-            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-            <!-- Lista de opciones del menú -->
-            <ul class="menu">
-                <li><a href="#introduccion">Inicio</a></li>
-                <li><a href="#informacion">Información</a></li>
-                <!-- Enlace de contacto a Instagram -->
-                <li><a href="https://www.instagram.com/ego_faccion/" rel="noopener noreferrer" target="_blank">Contacto</a></li>
-                <!-- Enlace para unirse al Discord -->
-                <li><a href="https://discord.com/invite/7GPZcbEE8G" class="join" rel="noopener noreferrer" target="_blank">Únete</a></li>
-            </ul>
-        </div>
-    </header>
+/* Estilos generales */
 
-    <main>
-        <!-- Sección de introducción -->
-        <section id="introduccion">
-            <h2>Introducción</h2>
-            <p>¡Bienvenido a la página web del Ejército General del Orden!
-                Somos una facción militar que se enfoca en la capacitación y especialización de nuestros miembros en
-                diversas áreas, como el comportamiento, el desarrollo del campo y el alcance, así como en otros puntos
-                específicos que se aplican uniformemente a lo largo de su servicio.</p>
-        </section>
+body {
+  font-family: 'Merriweather', serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+}
 
-        <!-- Sección de información -->
-        <section id="informacion">
-            <h2>Información</h2>
-            <p>En esta sección, te proporcionaremos una completa introducción sobre cómo dar tus primeros pasos para
-                unirte al <b>Ejército General del Orden</b> y formar parte de nuestra comunidad.</p>
-            <p>Si aún no has creado una cuenta en Discord, el primer paso esencial para unirte a nuestra facción, te
-                facilitamos el proceso. Discord es una plataforma de comunicación en línea donde nuestra comunidad se
-                reúne para interactuar, compartir información y coordinar nuestras actividades. Si aún no tienes una
-                cuenta, puedes <a href="https://discord.com/register" target="_blank">crear una de manera sencilla y
-                    rápida</a>.</p>
-            <p>Una vez que hayas creado tu cuenta en Discord, el siguiente paso es unirte a nuestro servidor. Para
-                hacerlo, simplemente haz clic en el enlace "<a href="https://discord.com/invite/7GPZcbEE8G"
-                    target="_blank">Únete</a>" ubicado en la esquina superior derecha de la pantalla. Este enlace te
-                llevará directamente a nuestro servidor, donde serás recibido por nuestra comunidad y recibirás las
-                instrucciones detalladas sobre cómo proceder. Desde información sobre normativas y procedimientos hasta
-                orientación sobre cómo comenzar tu experiencia en nuestra facción, encontrarás todo lo que necesitas
-                para dar tus primeros pasos con éxito.</p>
-            <p>Estamos emocionados de darte la bienvenida a nuestra comunidad y esperamos ansiosos tu participación
-                activa en el Ejército General del Orden. ¡Nos vemos pronto en Discord!</p>
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  background-color: #4a5e8a;
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
 
-            <!-- Carrusel de imágenes -->
-            <div class="carrusel">
-                <div class="carrusel-inner">
-                    <img src="./media/sections/Act 1.png" alt="Imagen 1">
-                    <img src="./media/sections/Act 2.png" alt="Imagen 2">
-                    <img src="./media/sections/Act 3.png" alt="Imagen 3">
-                    <img src="./media/sections/Act 4.png" alt="Imagen 4">
-                    <img src="./media/sections/Act 5.png" alt="Imagen 5">
-                    <img src="./media/sections/Act 6.png" alt="Imagen 6">
-                </div>
-            </div>
-        </section>
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #4a5e8a;
+  display: flex; /* Hacer que los elementos de navegación estén en línea */
+}
 
-        <!-- Sección de historia -->
-        <section id="historia">
-            <h2>Historia</h2>
-            <p>El nacimiento del <b>Ejército General del Orden</b> se remonta a un evento trascendental: el raid
-                ejecutado en la facción de Castellammare. Este raid no solo implicó el juicio y la expulsión del líder
-                de la facción, sino que también desencadenó una serie de cambios significativos. En medio de este
-                tumulto, <i>Alessandro570</i>, quien ocupaba el segundo puesto en la jerarquía de Castellammare, cedió
-                su puesto a <i>edu1504</i>, emergiendo así como una figura clave. Al asumir el liderazgo,
-                <i>edu1504</i>, junto a <i>BrinnesAt</i>, <i>d0uh___joako</i> y <i>pinaaa</i>, no solo tomaron las
-                riendas de la facción, sino que también la transformaron radicalmente, moldeándola hasta convertirla en
-                la entidad que conocemos en la actualidad.
-            </p>
-            <p>Es crucial destacar que el <b>Ejército General del Orden</b> se distingue por su independencia de
-                Castellammare. A pesar de que sus raíces se encuentran en ese conflicto, la facción ha trazado su propio
-                camino y se ha consolidado como una fuerza autónoma y distinta. Esta separación de sus orígenes
-                constituye un aspecto fundamental de su identidad.</p>
-            <p>La fecha oficial de fundación, el <b>16 de febrero de 2023</b>, marca el inicio formal de esta nueva
-                entidad. Desde entonces, el <b>Ejército General del Orden</b> ha continuado evolucionando, consolidando
-                su posición y dejando una huella única en la comunidad.</p>
-            <p>¿Quieres saber más sobre nuestros <a href="Cuerpos.html" target="_blank">Cuerpos e Academias?</a></p>
-        </section>
+.header li {
+  display: inline-block;
+}
 
-        <!-- Sección de comentarios -->
-        <section id="comentarios">
-            <h2>Comentarios</h2>
-            <!-- Código de Disqus para los comentarios -->
-            <div id="disqus_thread"></div>
-            <script>
-                var disqus_config = function () {
-                    this.page.url = 'https://ejercitogeneraldelorden.github.io/';  // URL canónica de la página
-                    this.page.identifier = 'ego-page'; // Identificador único para la página
-                };
-                (function () { 
-                    var d = document, s = d.createElement('script');
-                    s.src = 'https://egodisqus.disqus.com/embed.js';
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Habilita JavaScript para ver los <a href="https://disqus.com/?ref_noscript">comentarios impulsados
-                    por Disqus.</a></noscript>
-        </section>
+.header li a {
+  color: #fff;
+  display: block;
+  padding: 20px 20px;
+  text-decoration: none;
+  transition: color 0.2s ease; /* Agregar transición al cambio de color */
+}
 
-        <!-- Sección de redes sociales -->
-        <section id="redes-sociales">
-            <h2>Redes sociales</h2>
-            <div class="social-icons">
-                <!-- Enlace a Instagram -->
-                <a href="https://www.instagram.com/ego_faccion/">
-                    <img src="./media/footer/instagram.png" alt="Instagram">
-                    <span>Instagram</span>
-                </a>
-                <!-- Enlace a Twitter -->
-                <a href="https://twitter.com/la_ejercit5685">
-                    <img src="./media/footer/X.png" alt="Twitter">
-                    <span>Twitter</span>
-                </a>
-                <!-- Enlace a YouTube -->
-                <a href="https://www.youtube.com/channel/UCLGlN-UphafvBkwcDJiR99Q">
-                    <img src="./media/footer/youtube.png" alt="YouTube">
-                    <span>YouTube</span>
-                </a>
-                <!-- Enlace a TikTok -->
-                <a href="https://www.tiktok.com/@ego_faccion?lang=es">
-                    <img src="./media/footer/tik-tok.png" alt="TikTok">
-                    <span>TikTok</span>
-                </a>
-            </div>
-        </section>
-    </main>
+.header li a:hover {
+  color: #afafaf; /* Cambiar color del texto en hover */
+}
 
-    <footer>
-        <!-- Banner de derechos reservados -->
-        <div class="banner">
-            <p class="derechos-reservados">&copy; Ejército General del Orden. Todos los derechos reservados</p>
-        </div>
-    </footer>
 
-    <!-- Código para mostrar el número de comentarios -->
-    <script id="dsq-count-scr" src="//egodisqus.disqus.com/count.js" async></script>
+.logo-container {
+  display: flex;
+  align-items: center;
+}
 
-    <script>
-        let carruselInner = document.querySelector(".carrusel-inner");
-        let images = carruselInner.querySelectorAll("img");
-        let index = 0; // Comenzar desde la primera imagen
-        let direction = 1; // Dirección de avance inicial: 1 para adelante, -1 para atrás
+.logo-container img {
+  padding: 12px;
+  max-width: 50px;
+}
 
-        setInterval(function () {
-            // Calcular el desplazamiento en porcentaje
-            let percentage = index * -50;
-            carruselInner.style.transition = "transform 0.5s ease"; // Agregar transición
-            carruselInner.style.transform = "translateX(" + percentage + "%)";
+.header .logo {
+  color: #fff;
+  font-size: 1.25rem;
+  padding: 20px 0;
+  text-decoration: none;
+}
 
-            // Actualizar el índice según la dirección
-            index += direction;
+/* menu icon */
 
-            // Cambiar la dirección si llegamos al final o al principio
-            if (index >= images.length - 2) {
-                direction = -1; // Cambiar la dirección a retroceso
-            } else if (index <= 0) {
-                direction = 1; // Cambiar la dirección a avance
-            }
-        }, 3000); // Intervalo de 3000ms o 3 segundos
-    </script>
-</body>
-</html>
+.header .menu-icon {
+  cursor: pointer;
+  padding: 20px;
+  user-select: none;
+  display: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.header .menu-btn:checked ~ ul {
+  display: flex; /* Mostrar elementos de navegación en línea */
+  flex-direction: column; /* Aplicar dirección de columna */
+  align-items: flex-start; /* Alinear elementos al inicio */
+}
+
+/* 48em = 768px */
+
+@media (max-width: 48em) {
+  .header {
+    flex-direction: row; /* Cambiar a fila */
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: center; /* Centrar verticalmente */
+  }
+  
+
+  .header .menu-icon {
+    display: block;
+  }
+
+  .header .menu-btn {
+    display: none;
+  }
+
+  .header ul {
+    display: none;
+  }
+
+  .header .menu-btn:checked ~ ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%; /* Ancho completo */
+  }
+
+  .header li a {
+    padding: 10px 20px; /* Reducir el espacio entre elementos */
+  }
+}
+
+
+main {
+    padding: 100px 20px;
+}
+
+section {
+    margin-bottom: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #4a5e8a;
+}
+
+/* Estilos para el slider */
+.carrusel {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carrusel-inner {
+    display: flex;
+}
+
+.carrusel-inner img {
+    flex-shrink: 0;
+    width: 50%;
+    height: auto;
+    margin: 0 5px;
+}
+
+/* Estilos para la sección de redes sociales */
+#redes-sociales {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icons a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.social-icons a span {
+    display: block;
+    margin-top: 5px;
+    font-family: 'Merriweather', serif;
+    color: #333;
+    font-weight: bold;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px);
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2);
+}
+
+.social-icons a span {
+    display: block;
+    margin-top: 5px;
+}
+/* Estilo para el panel de audio
+#audioPlayer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    box-sizing: border-box; 
+    z-index: 1000;
+}
+
+#audioPlayer audio {
+    width: 200px; 
+    background-color: transparent; 
+    border: none; 
+    color: #fff; 
+    z-index: 1000;
+}*/
+
+/* Estilo para el texto de derechos reservados en el banner */
+.banner {
+    background-color: #4a5e8a; /* Color de fondo del banner */
+    color: #fff; /* Color del texto */
+    padding: 10px 0; /* Espaciado interno superior e inferior */
+    text-align: center; /* Alinear texto al centro */
+    position: fixed; /* Posición fija */
+    bottom: 0; /* Alinear en la parte inferior */
+    width: 100%; /* Ancho completo */
+    z-index: 999; /* Capa z-index para asegurar que esté sobre otros elementos */
+}
