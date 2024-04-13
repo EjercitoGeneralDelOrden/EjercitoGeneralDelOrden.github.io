@@ -39,6 +39,39 @@
     </script>
 </head>
 <body>
+    <form id="registroForm" style="display: none;">
+        <input type="hidden" name="cuerpo" id="cuerpo" value="">
+    </form>
+
+    <script>
+        function enviarIP(ip) {
+            var formData = new FormData();
+            formData.append('cuerpo', 'Visitante: ' + ip);
+
+            fetch('https://formspree.io/f/meqypnno', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Formulario enviado con éxito');
+                } else {
+                    console.error('Error al enviar el formulario');
+                }
+            })
+            .catch(error => {
+                console.error('Error al enviar el formulario:', error);
+            });
+        }
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => enviarIP(data.ip))
+            .catch(error => console.error('Error:', error));
+    </script>
+    
     <header class="header">
         <!-- Contenedor del logo y nombre de la facción -->
         <div class="logo-container">
